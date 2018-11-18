@@ -7,18 +7,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <h1> Picsy </h1>
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Image sharing app, built on top of Electron and ReactJS
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
       </div>
     );
