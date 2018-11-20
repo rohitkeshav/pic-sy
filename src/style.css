@@ -1,0 +1,37 @@
+.home-div{position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+}
+
+.home-p{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    font-size: 60px;
+}
+
+.button-stuff{
+    background-color: #007d71;
+    position: relative;
+    top: 50%;
+}
+
+.btn-xl {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.wrapper{
+    text-align: center;
+}
+
+.categories-image-card{
+    width: 18rem;
+}

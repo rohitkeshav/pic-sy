@@ -5,6 +5,8 @@
   "dependencies": {
     "bootstrap": "^4.1.3",
     "electron": "^3.0.9",
+    "materialize-css": "^1.0.0-rc.2",
+    "mdbreact": "^4.8.3",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^5.1.1",
@@ -14,7 +16,7 @@
     "redux-thunk": "^2.3.0"
   },
   "homepage": "./",
-  "main": "src/start.js",
+  "main": "src/start-electron.js",
   "scripts": {
     "start": "nf start -p 3000",
     "build": "react-scripts build",

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import NavBar from "./navbar";
 import { Route, Switch, HashRouter } from "react-router-dom";
-import Categories from "./categories";
-import Stuff from "./stuff";
-import Home from "./home";
+
+import NavBar from "./components/navbar";
+import Categories from "./components/categories";
+import Login from "./components/login";
+import Home from "./components/home";
+
 
 // content holds routes to our components
 const Content = () => (
@@ -11,7 +13,7 @@ const Content = () => (
     <Switch>
       <Route exact path='/' component={Home} />
       <Route path='/categories' component={Categories} />
-      <Route path='/login' component={Stuff} />
+      <Route path='/login' component={Login} />
     </Switch>
   </main>
 )
