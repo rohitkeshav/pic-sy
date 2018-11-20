@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
-import { Route, NavLink, HashRouter } from "react-router-dom";
-import Home from "./home";
+import NavBar from "./navbar";
+import { Route, Switch, HashRouter } from "react-router-dom";
+import Categories from "./categories";
 import Stuff from "./stuff";
-import Contact from "./contact";
+import Home from "./home";
+
+// content holds routes to our components
+const Content = () => (
+  <main>
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route path='/categories' component={Categories} />
+      <Route path='/login' component={Stuff} />
+    </Switch>
+  </main>
+)
 
 
 class App extends Component {
@@ -10,21 +22,8 @@ class App extends Component {
     return (
       <HashRouter>
         <div>
-            <h1> Picsy </h1>
-            <p>
-              Image sharing app, built on top of Electron and ReactJS
-            </p>
-
-            <ul className="header">
-              <li><NavLink to="/">Home</NavLink></li>
-              <li><NavLink to="/stuff">Stuff</NavLink></li>
-              <li><NavLink to="/contact">Contact</NavLink></li>
-            </ul>
-            <div className="content">
-              <Route exact path="/" component={Home} />
-              <Route path="/stuff" component={Stuff} />
-              <Route path="/contact" component={Contact} />
-            </div>
+          <NavBar></NavBar>
+          <Content></Content>
         </div>
       </HashRouter>
     );
