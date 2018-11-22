@@ -6,6 +6,8 @@ import Categories from "./components/categories";
 import Login from "./components/login";
 import Home from "./components/home";
 
+// import userList from '../containers/user_list';
+
 
 // content holds routes to our components
 const Content = () => (

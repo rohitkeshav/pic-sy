@@ -3,6 +3,14 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 
 export default class Login extends Component {
+    // HERE!!!
+    constructor(props) {
+        super(props)
+
+        this.username = '';
+        this.password = '';
+    }
+    
     render() {
         return (
             <div>
@@ -16,8 +24,6 @@ export default class Login extends Component {
                             
                             <div className="row">
                                 <div className="col-md-6 mx-auto">
-
-                                                {/* <!-- form card login --> */}
                                     <div className="card rounded-0">
                                             <div className="card-header">
                                                 <h3 className="mb-0">
