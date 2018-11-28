@@ -11,4 +11,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 4. Python based cron job (concurrent process) for sending out emails
 5. Elastic Search possibly replace with socketIO
 
+##### Getting started -
+1. ``` git clone https://github.com/rohitkeshav/pic-sy.git ```
+2. ``` npm install ```
+3. ``` npm start ``` - starts the react process, to ease out debugging
+
 ##### Additonal information still to be added
