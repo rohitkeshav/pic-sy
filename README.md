@@ -14,4 +14,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ##### Getting Started -
 1. ``` git clone https://github.com/rohitkeshav/pic-sy.git ```
 2. ``` npm install ```
-3. ``` npm start ``` - starts the react process, to ease out debugging
+3. ``` npm start ``` - starts the react process only, electron is silenced for the purpose of debugging
