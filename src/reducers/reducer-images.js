@@ -1,4 +1,4 @@
-
+// kriti
 export default function(){
     return {
         'all': ['all1', 'all2', 'all3', 'all4', 'all5'],
