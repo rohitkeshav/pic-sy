@@ -12,37 +12,37 @@ export default function(){
         {
             id: 1,
             category_name: 'All',
-            img_src: { all },
+            img_src: all,
             desc: "All : Some quick example text to build on the card title and make up the bulk of the card's content."
         },
         {
             id: 2,
             category_name: 'Funny',
-            img_src: { funny },
+            img_src: funny,
             desc: "Funny : Some quick example text to build on the card title and make up the bulk of the card's content."
         },
         {
             id: 3,
             category_name: 'Fail',
-            img_src: { fail },
+            img_src: fail,
             desc: "Fail : Some quick example text to build on the card title and make up the bulk of the card's content."
         },
         {
             id: 4,
             category_name: 'Anime',
-            img_src: { anime },
+            img_src: anime,
             desc: "Anime : Some quick example text to build on the card title and make up the bulk of the card's content."
         },
         {
             id: 5,
             category_name: 'Staff picks',
-            img_src: { staffPick },
+            img_src: staffPick,
             desc: "Staff picks : Some quick example text to build on the card title and make up the bulk of the card's content."
         },
         {
             id: 6,
             category_name: 'Memes',
-            img_src: { memes },
+            img_src: memes ,
             desc: "Memes : Some quick example text to build on the card title and make up the bulk of the card's content."
         }
     ]
