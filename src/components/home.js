@@ -7,7 +7,7 @@ export default class Home extends Component {
     render() {
         return (
             <div className="home-div">
-                <h1 className="home-h1">Welcome to Nunni</h1>
+                <h1 className="home-h1">Welcome to Imagica</h1>
                 <p className="home-p"> Image sharing app, built on top of Electron and ReactJS </p>
                 <div className="wrapper">
                     <Link to="/categories">
