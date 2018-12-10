@@ -9,7 +9,7 @@ export default class NavBar extends Component {
             // <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     
-                    <a className="navbar-brand" href="/">Nunni</a>
+                    <a className="navbar-brand" href="/">Imagica</a>
                     
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

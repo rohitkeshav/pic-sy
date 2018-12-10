@@ -2,22 +2,26 @@ import React, { Component } from "react";
 import "../style.css";
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line
 class Categories extends Component {
 
     createListItems() {
+        // console.log("this.props.categoryImages ==> ", this.props.categoryImages);
         return this.props.categoryImages.map((cImage) => {
+            console.log("cimage ==> ", cImage);
             return (
                 <div key={cImage.id} className="col">
 
                     <div className="card categories-image-card">
-                        <img className="card-img-top" src={cImage.img_src} alt=""></img>
+                        <Link className="nav-link" to='/image_grid'>
+                            <img className="card-img-top" src={cImage.img_src} alt=""></img>
 
-                        <div className="card-body">
-                            <p className="card-text">{cImage.category_name}</p>
-                        </div>
+                            <div className="card-body">
+                                <p className="card-text">{cImage.category_name}</p>
+                            </div>
+                        </Link>
                     </div>
 
                 </div>
@@ -43,6 +47,7 @@ class Categories extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log("State ==> ", state);
     return {
         categoryImages: state.categoryImages
     }
