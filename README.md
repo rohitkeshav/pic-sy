@@ -16,4 +16,4 @@
 5. ``` npm install ```
 6. ``` npm start ``` - starts the server
 7. ``` cd ../client ```
-8. ``` npm start ``` - starts the server
+8. ``` npm start ``` - starts the client
