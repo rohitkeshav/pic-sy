@@ -1,6 +1,7 @@
 // const uuidv4 = require('uuid/v4');
 const mongoCollections = require("../mongoCollections");
 const userItems = mongoCollections.userItems;
+const uuidv4 = require('uuid/v4');
 
 
 const parameterCheck = function (rTitle, rIngredients, rSteps) {
@@ -37,32 +38,34 @@ const parameterTypeCheck = function (title, ingredients, steps) {
 
 const exportMethods = {
 
-    // async createRecipeObject(rTitle, rIngredients, rSteps) {
-    //     parameterCheck(rTitle, rIngredients, rSteps);
-    //     parameterTypeCheck(rTitle, rIngredients, rSteps);
+    async createUserObject(lname, fname, password, email, uname, gender) {
+        // parameterCheck(lname, fname, password, email, uname, gender);
 
-    //     const retVal = {
-    //         _id: uuidv4(),
-    //         title: rTitle,
-    //         ingredients: rIngredients,
-    //         steps: rSteps
-    //     }
+        const retVal = {
+            _id: uuidv4()
+            , fname: fname
+            , lname: lname
+            , password: password
+            , email: email
+            , uname: uname
+            , gender: gender
+        }
 
-    //     const recipeItemsCollection = await recipeItems();
-    //     const insertRecipe = await recipeItemsCollection.insertOne(retVal);
+        const userItemsCollection = await userItems();
+        const insertUser = await userItemsCollection.insertOne(retVal);
 
-    //     if (insertRecipe.insertedCount === 0)
-    //         throw "Could not add recipe";
+        if (insertUser.insertedCount === 0)
+            throw "Could not add user";
 
-    //     const newRecipeID = insertRecipe.insertedId;
+        const newUserID = insertUser.insertedId;
 
-    //     const recipe = await this.getRecipe(newRecipeID);
+        const user = await this.getUser(newUserID);
 
-    //     return recipe;
-    // },
+        return user;
+    },
 
-    async getRecipe(userId) {
-        if (!recipeID)
+    async getUser(userId) {
+        if (!userId)
             throw 'You must provide a recipe ID to query';
 
         const userItemsCollection = await userItems();
@@ -75,7 +78,7 @@ const exportMethods = {
         return userObject;
     },
 
-    async getAllRecipes() {
+    async getAllUsers() {
         const userItemsCollection = await userItems();
 
         const allUsers = await userItemsCollection.find({}, { title: 1 }).toArray();

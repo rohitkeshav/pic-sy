@@ -6,6 +6,7 @@ const whitelist = ['http://localhost:8000']
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require('body-parser');
+
 const app = express();
 
 const corsOptions = {
@@ -19,7 +20,8 @@ const corsOptions = {
 }
 
 // allow cross origin calls by port 3000
-app.use(cors(corsOptions));
+app.use(cors());
+// app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 const configRoutes = require("./routes");

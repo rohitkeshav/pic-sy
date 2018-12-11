@@ -8,7 +8,7 @@ const uData = data.users;
 // get all recipes
 router.get("/", async (req, res) => {
     try {
-        const retrievedObjects = await uData.getAllRecipes();
+        const retrievedObjects = await uData.getAllUsers();
         res.json(retrievedObjects);
     } catch (e) {
         res.status(404).json({ message: e });
@@ -19,25 +19,26 @@ router.get("/", async (req, res) => {
 // get recipe with ID
 router.get("/:id", async (req, res) => {
     try {
-        const retrievedObject = await uData.getRecipe(req.params.id);
+        const retrievedObject = await uData.getUser(req.params.id);
         res.json(retrievedObject);
     } catch (e) {
-        res.status(404).json({ message: "Recipe not found" });
+        res.status(404).json({ message: "User not found" });
     }
 });
 
-// create a new recipe
-// router.post("/", async (req, res) => {
-//     try {
-//         console.log(req.bod);
-//         const { title, ingredients, steps } = req.body;
-//         const newObject = await rData.createRecipeObject(title, ingredients, steps);
-//         res.json(newObject);
-//     } catch (e) {
-//         console.log(e);
-//         res.status(404).json({ message: e });
-//     }
-// });
+// create a new user
+router.post("/", async (req, res) => {
+    try {
+        console.log(req.body);
+        const { lname, fname, password, email, uname, gender } = req.body;
+        
+        const newObject = await uData.createUserObject(lname, fname, password, email, uname, gender);
+        res.json(newObject);
+    } catch (e) {
+        console.log(e);
+        res.status(404).json({ message: e });
+    }
+});
 
 
 // // put request to recipe
