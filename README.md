@@ -6,12 +6,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ##### TODO - 
 1. Authentication
-2. MongoDB support
-3. Redis
+2. ˜˜MongoDB support˜˜
+3. ˜˜Express backend˜˜
 4. Python based cron job (concurrent process) for sending out emails
 5. Elastic Search possibly replace with socketIO
+6. Redis
 
 ##### Getting Started -
 1. ``` git clone https://github.com/rohitkeshav/pic-sy.git ```
-2. ``` npm install ```
-3. ``` npm start ``` - starts the react process only, electron is silenced for the purpose of debugging
+2. ``` cd client ```
+3. ``` npm install ```
+4. ``` cd ../server ```
+5. ``` npm install ```
+6. ``` npm start ``` - starts the server
+7. ``` cd ../client ```
+8. ``` npm start ``` - starts the server

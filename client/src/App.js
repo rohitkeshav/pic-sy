@@ -3,9 +3,9 @@ import { Route, Switch, HashRouter } from "react-router-dom";
 
 import NavBar from "./components/navbar";
 import Categories from "./components/categories";
-import ImageGrid from "./components/image_grid";
 import Login from "./components/login";
 import Home from "./components/home";
+import UserDashboard from "./components/user_dashboard";
 
 // import userList from '../containers/user_list';
 
@@ -17,7 +17,7 @@ const Content = () => (
       <Route exact path='/' component={Home} />
       <Route path='/categories' component={Categories} />
       <Route path='/login' component={Login} />
-      <Route path='/image_grid' component={ImageGrid} />
+      <Route path='/dashboard' component={UserDashboard} />
     </Switch>
   </main>
 )
