@@ -5,12 +5,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ##### TODO - 
-1. Authentication
-2. ˜˜MongoDB support˜˜
-3. ˜˜Express backend˜˜
-4. Python based cron job (concurrent process) for sending out emails
-5. Elastic Search possibly replace with socketIO
-6. Redis
+- Authentication
+- MongoDB support - Done
+- Express backend - Done
+- Python based cron job (concurrent process) for sending out emails
+- Elastic Search possibly replace with socketIO
+- Redis
 
 ##### Getting Started -
 1. ``` git clone https://github.com/rohitkeshav/pic-sy.git ```
