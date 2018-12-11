@@ -1,13 +1,9 @@
-# Nunni
-
-##### For the lack of a better name (reference from one of SNL's sketches)
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Imagica
 
 ##### TODO - 
 - Authentication
-- MongoDB support - Done
-- Express backend - Done
+- MongoDB support - **Done**
+- Express backend - **Done**
 - Python based cron job (concurrent process) for sending out emails
 - Elastic Search possibly replace with socketIO
 - Redis
