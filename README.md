@@ -16,4 +16,4 @@
 5. ``` npm install ```
 
 ###### Replace node with nodemon in root procfile to allow hot reloading
-6. ``` npm start ``` or use ``` nodemon ``` to allow hot reloading for dev
+6. ``` npm start ```
