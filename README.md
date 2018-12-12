@@ -14,6 +14,6 @@
 3. ``` npm install ```
 4. ``` cd ../server ```
 5. ``` npm install ```
+
+###### Replace node with nodemon in root procfile to allow hot reloading
 6. ``` npm start ``` or use ``` nodemon ``` to allow hot reloading for dev
-7. ``` cd ../client ```
-8. ``` npm start ``` - starts the client
