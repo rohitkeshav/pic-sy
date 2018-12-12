@@ -30,16 +30,16 @@ app.use(cors());
 // app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
-// app.use(cookieParser());
+app.use(cookieParser());
 
 // passport
-// app.use(require('express-session')({
-//   secret: 'keyboard cat',
-//   resave: false,
-//   saveUninitialized: false
-// }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(require('express-session')({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 const configRoutes = require("./routes");
 

@@ -34,14 +34,14 @@ const exportMethods = {
 
     async getUser(userId) {
         if (!userId)
-            throw 'You must provide a recipe ID to query';
+            throw 'You must provide a user ID to query';
 
         const userItemsCollection = await userItems();
 
         const userObject = await userItemsCollection.findOne({ _id: userId });
 
         if (userObject === null)
-            throw 'No recipe with ID - ${recipeID}';
+            throw 'No user with ID - ${userID}';
 
         return userObject;
     },
