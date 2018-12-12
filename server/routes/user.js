@@ -27,6 +27,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // create a new user
+// signup
 router.post("/", async (req, res) => {
     try {
         console.log(req.body);

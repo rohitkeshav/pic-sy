@@ -4,38 +4,6 @@ const userItems = mongoCollections.userItems;
 const uuidv4 = require('uuid/v4');
 
 
-const parameterCheck = function (rTitle, rIngredients, rSteps) {
-    if (!rTitle) throw "You must provide a title";
-    if (!rIngredients) throw "You must provide ingredients to the recipe";
-    if (!rSteps) throw "You must provide steps for the recipe";
-}
-
-const parameterTypeCheck = function (title, ingredients, steps) {
-    if (typeof title !== 'string')
-        throw "Title should be of type string"
-
-    if (ingredients.length === 0)
-        throw "No ingredients given"
-
-    if (!Array.isArray(ingredients)) {
-        ingredients.forEach(element => {
-            if (typeof element.name === undefined, typeof element.amount === undefined)
-                throw "Each ingredients require 2 parameters - name and amount"
-        });
-    }
-
-    if (steps.length === 0)
-        throw "No steps for recipe supplied"
-
-    if (Array.isArray(steps)) {
-        steps.forEach(element => {
-            if (typeof element !== 'string')
-                throw "Steps must be an array of strings"
-        });
-    }
-}
-
-
 const exportMethods = {
 
     async createUserObject(lname, fname, password, email, uname, gender) {
