@@ -1,0 +1,21 @@
+{
+  "name": "pic-sy",
+  "version": "1.0.0",
+  "description": "Image sharing desktop app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nf start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rohitkeshav/pic-sy.git"
+  },
+  "keywords": [],
+  "author": "Rohit Keshav | Kriti Ruhela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohitkeshav/pic-sy/issues"
+  },
+  "homepage": "https://github.com/rohitkeshav/pic-sy#readme"
+}

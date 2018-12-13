@@ -14,9 +14,9 @@
 3. ``` npm install ```
 4. ``` cd ../server ```
 5. ``` npm install ```
-6. ``` npm start ``` - starts the server
-7. ``` cd ../client ```
-8. ``` npm start ``` - starts the client
+
+###### Replace node with nodemon in root procfile to allow hot reloading
+6. ```npm start```
 
 ##### Import Collections using mongoimport
 

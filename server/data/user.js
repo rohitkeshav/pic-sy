@@ -1,81 +1,52 @@
 // const uuidv4 = require('uuid/v4');
 const mongoCollections = require("../mongoCollections");
 const userItems = mongoCollections.userItems;
-
-
-const parameterCheck = function (rTitle, rIngredients, rSteps) {
-    if (!rTitle) throw "You must provide a title";
-    if (!rIngredients) throw "You must provide ingredients to the recipe";
-    if (!rSteps) throw "You must provide steps for the recipe";
-}
-
-const parameterTypeCheck = function (title, ingredients, steps) {
-    if (typeof title !== 'string')
-        throw "Title should be of type string"
-
-    if (ingredients.length === 0)
-        throw "No ingredients given"
-
-    if (!Array.isArray(ingredients)) {
-        ingredients.forEach(element => {
-            if (typeof element.name === undefined, typeof element.amount === undefined)
-                throw "Each ingredients require 2 parameters - name and amount"
-        });
-    }
-
-    if (steps.length === 0)
-        throw "No steps for recipe supplied"
-
-    if (Array.isArray(steps)) {
-        steps.forEach(element => {
-            if (typeof element !== 'string')
-                throw "Steps must be an array of strings"
-        });
-    }
-}
+const uuidv4 = require('uuid/v4');
 
 
 const exportMethods = {
 
-    // async createRecipeObject(rTitle, rIngredients, rSteps) {
-    //     parameterCheck(rTitle, rIngredients, rSteps);
-    //     parameterTypeCheck(rTitle, rIngredients, rSteps);
+    async createUserObject(lname, fname, password, email, uname, gender) {
+        // parameterCheck(lname, fname, password, email, uname, gender);
 
-    //     const retVal = {
-    //         _id: uuidv4(),
-    //         title: rTitle,
-    //         ingredients: rIngredients,
-    //         steps: rSteps
-    //     }
+        const retVal = {
+            _id: uuidv4()
+            , fname: fname
+            , lname: lname
+            , password: password
+            , email: email
+            , uname: uname
+            , gender: gender
+        }
 
-    //     const recipeItemsCollection = await recipeItems();
-    //     const insertRecipe = await recipeItemsCollection.insertOne(retVal);
+        const userItemsCollection = await userItems();
+        const insertUser = await userItemsCollection.insertOne(retVal);
 
-    //     if (insertRecipe.insertedCount === 0)
-    //         throw "Could not add recipe";
+        if (insertUser.insertedCount === 0)
+            throw "Could not add user";
 
-    //     const newRecipeID = insertRecipe.insertedId;
+        const newUserID = insertUser.insertedId;
 
-    //     const recipe = await this.getRecipe(newRecipeID);
+        const user = await this.getUser(newUserID);
 
-    //     return recipe;
-    // },
+        return user;
+    },
 
-    async getRecipe(userId) {
-        if (!recipeID)
-            throw 'You must provide a recipe ID to query';
+    async getUser(userId) {
+        if (!userId)
+            throw 'You must provide a user ID to query';
 
         const userItemsCollection = await userItems();
 
         const userObject = await userItemsCollection.findOne({ _id: userId });
 
         if (userObject === null)
-            throw 'No recipe with ID - ${recipeID}';
+            throw 'No user with ID - ${userID}';
 
         return userObject;
     },
 
-    async getAllRecipes() {
+    async getAllUsers() {
         const userItemsCollection = await userItems();
 
         const allUsers = await userItemsCollection.find({}, { title: 1 }).toArray();
