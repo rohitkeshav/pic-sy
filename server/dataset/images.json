@@ -1,0 +1,77 @@
+{
+    "_id": "d0975326-7b43-479e-a109-cb818abec62d",
+    "url": "../client/src/assets/imageGrid/funny/1.jpg",
+    "category": "Funny",
+    "tag": ["hilarious", "funny", "funnypic", "funnypost", "humor"],
+    "userId": "1"
+}
+{
+    "_id": "7b7997a2-c0d2-4f8c-b27a-6a1d4b5b6311",
+    "url": "../client/src/assets/imageGrid/funny/2.jpg",
+    "category": "Funny",
+    "tag": ["hilarious", "funny", "funnypic", "funnypost", "humor"],
+    "userId": "1"
+}
+{
+    "_id": "7b7997a2-c0d2-4f8c-b27a-6a1d4b5b6310",
+    "url": "../client/src/assets/imageGrid/funny/3.jpg",
+    "category": "Funny",
+    "tag": ["hilarious", "funny", "funnypic", "funnypost", "humor"],
+    "userId": "1"
+}
+{
+    "_id": "7c7997a2-c0d2-4f8c-b27a-6a1d4b5b6334",
+    "url": "../client/src/assets/imageGrid/funny/4.jpg",
+    "category": "Funny",
+    "tag": ["hilarious", "funny", "funnypic", "funnypost", "humor"],
+    "userId": "1"
+}
+{
+    "_id": "7c7997a2-c0d2-4f8c-b27a-6a1d4b5b6333",
+    "url": "../client/src/assets/imageGrid/funny/5.jpg",
+    "category": "Funny",
+    "tag": ["hilarious", "funny", "funnypic", "funnypost", "humor"],
+    "userId": "1"
+}
+{
+    "_id": "a0975556-7b43-479e-a109-ab820abea55d",
+    "url": "../client/src/assets/imageGrid/staffPicks/1.jpg",
+    "category": "StaffPicks",
+    "tag": ["funny", "cute", "dogs", "funnypost", "memes"],
+    "userId": "1"
+}
+{
+    "_id": "a0975556-7c43-479e-a109-ac777abea55d",
+    "url": "../client/src/assets/imageGrid/staffPicks/2.jpg",
+    "category": "StaffPicks",
+    "tag": ["funny", "cute", "dogs", "funnypost", "memes"],
+    "userId": "1"
+}
+{
+    "_id": "a0975556-7c43-479e-a109-ac778abea55d",
+    "url": "../client/src/assets/imageGrid/staffPicks/3.jpg",
+    "category": "StaffPicks",
+    "tag": ["funny", "cute", "dogs", "funnypost", "memes"],
+    "userId": "1"
+}
+{
+    "_id": "a0235556-7b43-479e-f420-ab820abea55d",
+    "url": "../client/src/assets/imageGrid/anime/1.jpg",
+    "category": "Anime",
+    "tag": ["anime", "animegirl", "animelover", "naruto", "animeboy"],
+    "userId": "1"
+}
+{
+    "_id": "a0235556-7b43-555f-f420-ab820aabc55d",
+    "url": "../client/src/assets/imageGrid/fails/2.jpg",
+    "category": "Fails",
+    "tag": ["fail", "whodidthis", "lol", "epic", "fails"],
+    "userId": "1"
+}
+{
+    "_id": "d2089756-7b43-479e-f420-ab820abea55d",
+    "url": "../client/src/assets/imageGrid/memes/3.jpg",
+    "category": "Memes",
+    "tag": ["like", "lol", "memesdaily", "funnypost", "memes"],
+    "userId": "1"
+}
