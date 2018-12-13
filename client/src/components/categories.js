@@ -15,7 +15,7 @@ class Categories extends Component {
                 <div key={cImage.id} className="col">
 
                     <div className="card categories-image-card">
-                        <Link className="nav-link" to='/image_grid'>
+                        <Link className="nav-link" to={{ pathname: '/image_grid', state: { category: cImage.category_name} }}>
                             <img className="card-img-top" src={cImage.img_src} alt=""></img>
 
                             <div className="card-body">

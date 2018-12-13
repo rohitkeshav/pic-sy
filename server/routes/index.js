@@ -1,8 +1,8 @@
-// const imageRoutes = require("./image");
+const imageRoutes = require("./image");
 const userRoutes = require("./user");
 
 const constructorMethod = app => {
-    // app.use("/image", imageRoutes);
+    app.use("/api/image", imageRoutes);
     app.use("/api/user", userRoutes);
 
     app.use("*", (req, res) => {

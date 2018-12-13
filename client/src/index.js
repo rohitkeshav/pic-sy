@@ -5,13 +5,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 // redux imports
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import allReducers from './reducers';
 import { Provider } from 'react-redux';
 
 
 // all application data
-const store = createStore(allReducers);
+const store = createStore(allReducers, applyMiddleware(thunk));
 
 
 // using provider now made availabe

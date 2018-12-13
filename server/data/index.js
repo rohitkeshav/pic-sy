@@ -1,7 +1,7 @@
 const userData = require("./user");
-// const imageData = require("./image");
+const imageData = require("./image");
 
 module.exports = {
-    users: userData
-    // images: imageData
+    users: userData,
+    images: imageData
 };

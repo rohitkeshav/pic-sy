@@ -17,3 +17,8 @@
 6. ``` npm start ``` - starts the server
 7. ``` cd ../client ```
 8. ``` npm start ``` - starts the client
+
+##### Import Collections using mongoimport
+
+1. mongoimport --db <DBname> --collection <CollectionName> --file <JSONFilePath>
+    eg. mongoimport --db picsy --collection images --file images.json

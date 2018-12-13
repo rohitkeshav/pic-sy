@@ -6,6 +6,7 @@ import Categories from "./components/categories";
 import Login from "./components/login";
 import Home from "./components/home";
 import UserDashboard from "./components/user_dashboard";
+import ImageGrid from "./components/image_grid";
 
 // import userList from '../containers/user_list';
 
@@ -18,6 +19,7 @@ const Content = () => (
       <Route path='/categories' component={Categories} />
       <Route path='/login' component={Login} />
       <Route path='/dashboard' component={UserDashboard} />
+      <Route path='/image_grid' component={ImageGrid} />
     </Switch>
   </main>
 )
