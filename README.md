@@ -20,5 +20,6 @@
 
 ##### Import Collections using mongoimport
 
-1. mongoimport --db <DBname> --collection <CollectionName> --file <JSONFilePath>
+1. mongoimport --db **DBname** --collection **CollectionName** --file **JSONFilePath**
+    
     eg. mongoimport --db picsy --collection images --file images.json
