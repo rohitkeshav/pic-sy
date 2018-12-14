@@ -24,25 +24,25 @@ let imageControllers = {
     getImageByCategory: async function(category) {
         if (!category) throw "Please provide a category";
         const imageCollection = await imageItems();
-        const imageInfo = await imageCollection.findOne({ category: category }).toArray();
+        const imageInfo = await imageCollection.find({ category: category }).toArray();
         if (imageInfo === null) {
             throw "Server issue in fetching image data by category name";
         }
         return imageInfo;
     },
 
-    /**
-     * @returns {Object} An object of image
-     */
-    getImageByTag: async function(tag) {
-        if (!tag) throw "Please provide a tag";
-        const imageCollection = await imageItems();
-        const imageInfo = await imageCollection.findOne({ tag: tag }).toArray();
-        if (imageInfo === null) {
-            throw "Server issue in fetching image data by tag";
-        }
-        return imageInfo;
-    },
+    // /**
+    //  * @returns {Object} An object of image
+    //  */
+    // getImageByTag: async function(tag) {
+    //     if (!tag) throw "Please provide a tag";
+    //     const imageCollection = await imageItems();
+    //     const imageInfo = await imageCollection.findOne({ tag: tag }).toArray();
+    //     if (imageInfo === null) {
+    //         throw "Server issue in fetching image data by tag";
+    //     }
+    //     return imageInfo;
+    // },
 
     /**
      * @param {String} userId

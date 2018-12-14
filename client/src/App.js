@@ -7,7 +7,9 @@ import Login from "./components/login";
 import Home from "./components/home";
 import UserDashboard from "./components/user_dashboard";
 import ImageGrid from "./components/image_grid";
-
+import ImageByUser from './components/ImageByUser';
+import ImageUploadForm from './components/ImageUploadForm';
+import Security from './components/Security';
 // import userList from '../containers/user_list';
 
 
@@ -20,6 +22,9 @@ const Content = () => (
       <Route path='/login' component={Login} />
       <Route path='/dashboard' component={UserDashboard} />
       <Route path='/image_grid' component={ImageGrid} />
+      <Route path="/ImageByUser" component={ImageByUser} />
+      <Route path="/ImageUploadForm" component={ImageUploadForm} />
+      <Route path="/Security" component={Security} />
     </Switch>
   </main>
 )

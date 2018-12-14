@@ -7,7 +7,7 @@ const iData = data.images;
 
 // get all images
 router.get("/", async (req, res) => {
-    console.log("I'm Here");
+    // console.log("I'm Here");
     try {
         const retrievedObjects = await iData.getAllImages();
         res.json(retrievedObjects);

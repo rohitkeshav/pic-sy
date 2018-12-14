@@ -1,0 +1,18 @@
+{
+    "_id": "7b7997a2-d0c2-4c8f-a27b-6a1d4b5b6315",
+    "fname": "Rohit",
+    "lname": "Keshav",
+    "password": "User@123",
+    "email": "rkeshav@stevens.edu",
+    "uname": "rohit93",
+    "gender": "Male"
+}
+{
+    "_id": "f82c6b8a-2c6a-45e2-887f-ad5f34631439",
+    "fname": "Kriti",
+    "lname": "Ruhela",
+    "password": "User@123",
+    "email": "kruhela@stevens.edu",
+    "uname": "kruhela",
+    "gender": "Female"
+}

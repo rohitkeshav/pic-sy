@@ -12,9 +12,9 @@ class Categories extends Component {
         return this.props.categoryImages.map((cImage) => {
             console.log("cimage ==> ", cImage);
             return (
-                <div key={cImage.id} className="col">
+                <div key={cImage.id} className="row">
 
-                    <div className="card categories-image-card">
+                    <div className="card categories-image-card col">
                         <Link className="nav-link" to={{ pathname: '/image_grid', state: { category: cImage.category_name} }}>
                             <img className="card-img-top" src={cImage.img_src} alt=""></img>
 
