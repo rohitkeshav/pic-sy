@@ -9,7 +9,6 @@ async function checkAuth(username, password) {
     const userObject = await uData.getUserByEmail(username);
 
     checkVal = bcrypt.compareSync(password, userObject['password']);
-    // checkVal = password === userObject['password'];
 
     return checkVal;
 };
@@ -35,9 +34,9 @@ router.get('/private', async (req, res) => {
     }
 });
 
-router.post("/login", async (req, res) => {
+router.post("/sign-in", async (req, res) => {
     const post = req.body;
-    const checkVal = false;
+    let checkVal = false;
 
     const uName = post.email;
     const password = post.password;
@@ -46,7 +45,8 @@ router.post("/login", async (req, res) => {
         checkVal = await checkAuth(uName, password);
     }
     catch (e) {
-        return res.redirect(200, '/login', { error: e });
+        console.log(e);
+        // return res.redirect(200, '/login', { error: e });
     }
     if (checkVal) {
         res.cookie('AuthCookie', uName);
@@ -67,9 +67,9 @@ router.post("/sign-up", async (req, res) => {
     res.json(newObject);
 });
 
-router.get("/login", async (req, res) => {
-    return res.redirect('/login');
-});
+// router.get("/login", async (req, res) => {
+//     return res.redirect('/login');
+// });
 
 router.get('/logout', async (req, res) => {
     res.clearCookie('AuthCookie')
