@@ -1,27 +1,27 @@
-// export default controllers = {
-//     selectUser : (user) => {
-//     console.log('Actions are working ', user.fname)
-
-//     return {
-//         type: 'USER-SELECTED',
-//         payload: user
-//     }
-// },
-
-// const selectImages = (image) => {
-//     console.log('Actions are working ', image)
-
-//     return {
-//         type: 'IMAGE-SELECTED',
-//         payload: image
-//     }
-// }
-// }
-
-
-// export default selectUser;
-
 export const SET_IMAGES = "SET_IMAGES";
+
+function handleResponse(response) {
+  console.log("response", response);
+  if (response.ok) {
+    return response.json();
+  } else {
+    let error = new Error(response.statusText);
+    error.response = response;
+    throw error;
+  }
+}
+
+export function saveImage(data) {
+  return dispatch => {
+    return fetch('http://localhost:3000/api/image', {
+      method: 'post',
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(handleResponse)
+  }
+}
 
 export function setImages(images) {
     console.log("DATA ==>", images)

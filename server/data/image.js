@@ -11,7 +11,7 @@ let imageControllers = {
     getImageById: async function(id) {
         if (!id) throw "Please provide a id";
         const imageCollection = await imageItems();
-        const imageInfo = await imageCollection.findOne({ _id: id }).toArray();
+        const imageInfo = await imageCollection.findOne({ _id: id });
         if (imageInfo === null) {
             throw "Server issue in fetching image data by id";
         }
@@ -51,7 +51,9 @@ let imageControllers = {
      * @param {String} url
      */
     createImageData: async function(userId, category, tag, url) {
+        console.log("category, tag, url", category, tag, url)
         if(!userId || !category || !tag || !url) throw "Insufficient data provided";
+        // if(!userId) userId = "1";
         
         let imageInfo = {
             _id: uuid.v4(), 

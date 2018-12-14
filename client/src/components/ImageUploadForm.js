@@ -2,10 +2,12 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import Dropdown from './Dropdown';
+import { connect } from 'react-redux';
+import { saveImage } from '../actions';
+import { Redirect } from 'react-router';
 
 class ImageUploadForm extends Component {
   state = {
-    // category: '',
     category: [
       {
         id: 0,
@@ -40,7 +42,10 @@ class ImageUploadForm extends Component {
     ],
     url: '',
     tag: '',
-    errors: {}
+    errors: {},
+    selectedCategory: '',
+    loading: false,
+    done: false
   }
 
   resetThenSet = (id, key) => {
@@ -70,38 +75,56 @@ class ImageUploadForm extends Component {
 
     // validation
     let errors = {};
-    // if (this.state.category === '') errors.category = "Can't be empty";
+    // let selectedCategory = '';
+    for(let x in this.state.category){
+      if(this.state.category[x].selected === true)
+      this.state.selectedCategory = this.state.category[x].title;   
+    }
+
+    
+    console.log("errors ==> ", errors);
+    // console.log("this.state.category", this.state.selectedCategory)
+    if (this.state.selectedCategory === '') errors.selectedCategory = "Can't be empty";
     if (this.state.url === '') errors.url = "Can't be empty";
     if (this.state.tag === '') errors.tag = "Can't be empty";
     this.setState({ errors });
+
+    const isValid = Object.keys(errors).length === 0
+
+    if (isValid) {
+      console.log("state", this.state);
+      const { url, tag, selectedCategory } = this.state;
+      console.log("errors", errors)
+      this.setState({ loading: true });
+      this.props.saveImage({ url, tag, selectedCategory }).then(
+        () => { this.setState({ done: true })},
+        (err) => err.response.json().then(({errors}) => this.setState({ errors, loading: false }))
+      );
+    }
   }
 
   render() {
-    return (
-      <form className="ui form" onSubmit={this.handleSubmit}>
+    const form = (
+      <form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleSubmit}>
         <h2 align="center">Add new image</h2>
 
-        
+        {!!this.state.errors.global && <div className="ui negative message"><p>{this.state.errors.global}</p></div>}
 
-        <div className={classnames('field', { error: !!this.state.errors.category})}>
+        <div className={classnames('field', { error: !!this.state.errors.selectedCategory})}>
           <label htmlFor="category">Category</label>
           <Dropdown
+            name="category"
             title="Select Category"
             list={this.state.category}
             resetThenSet={this.resetThenSet}
-          />
-          {/* <input
-            name="category"
-            value={this.state.category}
             onChange={this.handleChange}
-            id="category"
           />
-          <span>{this.state.errors.category}</span> */}
+           <span>{this.state.errors.selectedCategory}</span>
         </div>
 
         <div className={classnames('field', { error: !!this.state.errors.url})}>
           <label htmlFor="url">Image URL</label>
-          <input
+          <input type="file"
             name="url"
             value={this.state.url}
             onChange={this.handleChange}
@@ -122,15 +145,16 @@ class ImageUploadForm extends Component {
         </div>
 
         <div className="field">
-          {this.state.url !== '' && <img src={this.state.url} alt="url" className="ui small bordered image"/>}
-        </div>
-
-        <div className="field">
           <button className="ui primary button">Upload</button>
         </div>
       </form>
     );
+    return (
+      <div>
+        { this.state.done ? <Redirect to="/dashboard/ImageByUser" /> : form }
+      </div>
+    );
   }
 }
 
-export default ImageUploadForm;
+export default connect(null, { saveImage })(ImageUploadForm);
