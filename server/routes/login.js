@@ -14,13 +14,13 @@ async function checkAuth(username, password) {
 };
 
 router.get('/', async (req, res) => {
-    res.redirect('/private');
+    res.redirect('/api/user');
 });
 
-router.get('/private', async (req, res) => {
+router.get('/api/user', async (req, res) => {
     let tVal = '';
     let cVal = false;
-
+    console.log("req.cookies",req.cookies);
     if (typeof res.cookie.AuthCookie === undefined) {
         tVal = '403 Error';
         cVal = true;
@@ -35,23 +35,27 @@ router.get('/private', async (req, res) => {
 });
 
 router.post("/sign-in", async (req, res) => {
+    console.log("req.body ==> ", req.body);
     const post = req.body;
     let checkVal = false;
 
-    const uName = post.email;
+    const uName = post.username;
     const password = post.password;
 
     try {
         checkVal = await checkAuth(uName, password);
+        console.log("checkVal ==> ", checkVal)
     }
     catch (e) {
         console.log(e);
         // return res.redirect(200, '/login', { error: e });
     }
     if (checkVal) {
+        console.log("uName ", uName)
         res.cookie('AuthCookie', uName);
+        console.log(req.cookies);
         console.log('Authenticated')
-        res.redirect('/private');
+        res.redirect('/api/user');
     }
     else
         res.send('Incorrect Username or Password');

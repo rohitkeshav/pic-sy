@@ -23,29 +23,7 @@ const Content = () => (
 export default class UserDashboard extends Component {
     createListItems () {
 
-    return (
-        // <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-
-        //             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-        //                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-
-        //                         <li className="nav-item">
-        //                             <Link className="nav-link" to="/categories">Profile</Link>
-        //                         </li>
-
-        //                         <li className="nav-item">
-        //                             <Link className="nav-link" to="/login">Upload</Link>
-        //                         </li>
-
-        //                         <li className="nav-item">
-        //                             <Link className="nav-link" to="/dashboard">Security</Link>
-        //                         </li>
-
-        //                     </ul>
-
-        //             </div>
-        //         </nav>
-        
+    return (        
             <div className="ui container">
               
               <HashRouter>
@@ -62,29 +40,6 @@ export default class UserDashboard extends Component {
     )
 }
 
-
-
-//     createListItems() {
-//         return this.props.users.map((user) => {
-            
-//             return (
-                
-//                 <li key={user.id} onClick={() => this.props.selectUser(user)}>
-//                     {user.fname} {user.lname}
-//                 </li>
-
-//             );
-//         });
-//     }
-
-//     // trial for fetching data from API
-//     componentDidMount() {
-//         axios.get(`http://localhost:3000/api/user`)
-//             .then(res => {
-//                 console.log(res.data);
-//             });
-//     }
-    
     render() {
         return (
             <div>
@@ -101,16 +56,3 @@ export default class UserDashboard extends Component {
         );
     }
 }
-
-
-// function mapStateToProps(state) {
-//     return {
-//         users: state.users
-//     }
-// }
-
-// function matchDispatchToProps(dispatch){
-//     return bindActionCreators({selectUser: selectUser}, dispatch)
-// }
-
-// export default connect(mapStateToProps, matchDispatchToProps)(UserDashboard);

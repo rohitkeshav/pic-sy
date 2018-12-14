@@ -1,4 +1,5 @@
 export const SET_IMAGES = "SET_IMAGES";
+// export const SET_LOGIN = "SET_LOGIN";
 
 function handleResponse(response) {
   console.log("response", response);
@@ -22,6 +23,31 @@ export function saveImage(data) {
     }).then(handleResponse)
   }
 }
+
+export function doLogin(data) {
+  return dispatch => {
+    return fetch('http://localhost:3000/auth/sign-in', {
+      method: 'post',
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(handleResponse)
+  }
+}
+
+export function createUser(data) {
+  return dispatch => {
+    return fetch('http://localhost:3000/auth/sign-up', {
+      method: 'post',
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(handleResponse)
+  }
+}
+
 
 export function setImages(images) {
     console.log("DATA ==>", images)

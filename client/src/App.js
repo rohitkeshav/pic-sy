@@ -10,6 +10,8 @@ import ImageGrid from "./components/image_grid";
 import ImageByUser from './components/ImageByUser';
 import ImageUploadForm from './components/ImageUploadForm';
 import Security from './components/Security';
+import loginDashboard from './components/LoginDashboard';
+import Signup from './components/signup';
 // import userList from '../containers/user_list';
 
 
@@ -21,10 +23,12 @@ const Content = () => (
       <Route path='/categories' component={Categories} />
       <Route path='/login' component={Login} />
       <Route path='/dashboard' component={UserDashboard} />
+      <Route path='/loginDashboard' component={loginDashboard} />
       <Route path='/image_grid' component={ImageGrid} />
       <Route path="/ImageByUser" component={ImageByUser} />
       <Route path="/ImageUploadForm" component={ImageUploadForm} />
       <Route path="/Security" component={Security} />
+      <Route path="/loginDashboard/Signup" component={Signup} />
     </Switch>
   </main>
 )
