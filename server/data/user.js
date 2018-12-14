@@ -2,18 +2,39 @@
 const mongoCollections = require("../mongoCollections");
 const userItems = mongoCollections.userItems;
 const uuidv4 = require('uuid/v4');
+const bcrypt = require('bcrypt');
 
+async function checkUser(email) {
+    try{
+        const user = await exportMethods.getUserByEmail(email);
+        // console.log(e)
+        if (user)
+            return false;
+    }
+    catch(e){
+        console.log(e)
+        return true;
+    }
+}
 
 const exportMethods = {
 
     async createUserObject(lname, fname, password, email, uname, gender) {
         // parameterCheck(lname, fname, password, email, uname, gender);
 
+        const pass = bcrypt.hashSync(password, 5);
+        console.log(pass);
+
+        const checkVal = await checkUser(email);
+        
+        if (!checkVal)
+            return {'error': 'email already in user'};
+
         const retVal = {
             _id: uuidv4()
             , fname: fname
             , lname: lname
-            , password: password
+            , password: pass
             , email: email
             , uname: uname
             , gender: gender
@@ -42,6 +63,20 @@ const exportMethods = {
 
         if (userObject === null)
             throw 'No user with ID - ${userID}';
+
+        return userObject;
+    },
+
+    async getUserByEmail(email) {
+        if (!email)
+            throw 'You must provide a user ID to query';
+        
+        const userItemsCollection = await userItems();
+
+        const userObject = await userItemsCollection.findOne({ email: email });
+
+        if (userObject === null)
+            throw 'No user with ID - ${email}';
 
         return userObject;
     },

@@ -33,15 +33,17 @@ class ImageGrid extends Component {
     }
 
     componentDidMount() {
-        const {category} = this.props.location.state;
+        console.log("this.props.location.state", this.props.location.state);
+        // const {category} = this.props.location.state;
+        const {category} = this.props.location.state === undefined ? "All" : this.props.location.state;
         console.log("props.location.state.category ==> ", category);
         var url='';
-        // if(category === "All") {
+        if(category === "All") {
             url = 'http://localhost:3000/api/image';
-        // }
-        // else {
-        //     url = 'http://localhost:3000/api/image/'; get category url
-        // }
+        }
+        else {
+            url = 'http://localhost:3000/api/image/'+category; //get category url
+        }
         
         this.props.fetchImages(url);
     }

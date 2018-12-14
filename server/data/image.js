@@ -11,7 +11,7 @@ let imageControllers = {
     getImageById: async function(id) {
         if (!id) throw "Please provide a id";
         const imageCollection = await imageItems();
-        const imageInfo = await imageCollection.findOne({ _id: id }).toArray();
+        const imageInfo = await imageCollection.findOne({ _id: id });
         if (imageInfo === null) {
             throw "Server issue in fetching image data by id";
         }
@@ -24,25 +24,25 @@ let imageControllers = {
     getImageByCategory: async function(category) {
         if (!category) throw "Please provide a category";
         const imageCollection = await imageItems();
-        const imageInfo = await imageCollection.findOne({ category: category }).toArray();
+        const imageInfo = await imageCollection.find({ category: category }).toArray();
         if (imageInfo === null) {
             throw "Server issue in fetching image data by category name";
         }
         return imageInfo;
     },
 
-    /**
-     * @returns {Object} An object of image
-     */
-    getImageByTag: async function(tag) {
-        if (!tag) throw "Please provide a tag";
-        const imageCollection = await imageItems();
-        const imageInfo = await imageCollection.findOne({ tag: tag }).toArray();
-        if (imageInfo === null) {
-            throw "Server issue in fetching image data by tag";
-        }
-        return imageInfo;
-    },
+    // /**
+    //  * @returns {Object} An object of image
+    //  */
+    // getImageByTag: async function(tag) {
+    //     if (!tag) throw "Please provide a tag";
+    //     const imageCollection = await imageItems();
+    //     const imageInfo = await imageCollection.findOne({ tag: tag }).toArray();
+    //     if (imageInfo === null) {
+    //         throw "Server issue in fetching image data by tag";
+    //     }
+    //     return imageInfo;
+    // },
 
     /**
      * @param {String} userId
@@ -51,7 +51,9 @@ let imageControllers = {
      * @param {String} url
      */
     createImageData: async function(userId, category, tag, url) {
+        console.log("category, tag, url", category, tag, url)
         if(!userId || !category || !tag || !url) throw "Insufficient data provided";
+        // if(!userId) userId = "1";
         
         let imageInfo = {
             _id: uuid.v4(), 

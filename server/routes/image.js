@@ -7,7 +7,7 @@ const iData = data.images;
 
 // get all images
 router.get("/", async (req, res) => {
-    console.log("I'm Here");
+    // console.log("I'm Here");
     try {
         const retrievedObjects = await iData.getAllImages();
         res.json(retrievedObjects);
@@ -50,7 +50,13 @@ router.get("/:category", async (req, res) => {
 // create a new image object
 router.post("/", async (req, res) => {
     try {
-        const { userId, category, tag, url } = req.body;
+        console.log("req.body ==> ", req.body)
+        // const { userId, url, tag, category } = req.body;
+        // const userId = req.body.userId;
+        const userId = "1";
+        const url = req.body.url;
+        const tag = req.body.tag;
+        const category = req.body.selectedCategory;
         const newObject = await iData.createImageData(userId, category, tag, url);
         res.json(newObject);
     } catch (e) {
