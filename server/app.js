@@ -10,7 +10,6 @@ const cookieParser = require('cookie-parser');
 
 // passport
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 
 const app = express();
 
@@ -33,13 +32,13 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // passport
-app.use(require('express-session')({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: false
-}));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(require('express-session')({
+//   secret: 'keyboard cat',
+//   resave: false,
+//   saveUninitialized: false
+// }));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 const configRoutes = require("./routes");
 
