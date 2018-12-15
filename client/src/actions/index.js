@@ -1,5 +1,5 @@
 export const SET_IMAGES = "SET_IMAGES";
-// export const SET_LOGIN = "SET_LOGIN";
+export const SET_VIEWS = "SET_VIEWS";
 
 function handleResponse(response) {
   console.log("response", response);
@@ -62,6 +62,29 @@ export function fetchImages(url) {
     fetch(url)
       .then(res => res.json())
       .then(data =>  dispatch(setImages(data)));
+  }
+}
+
+export function mostViewed(url) {
+  return dispatch => {
+    fetch(url)
+      .then(res => res.json())
+  }
+}
+
+export function setViews(views) {
+  console.log("DATA ==>", views)
+return {
+  type: SET_VIEWS,
+  views: views
+}
+}
+
+export function topViewed(url) {
+  return dispatch => {
+    fetch(url)
+      .then(res => res.json())
+      .then(data =>  dispatch(setViews(data)));
   }
 }
 

@@ -8,9 +8,35 @@ import { connect } from 'react-redux';
 // import axios from 'axios';
 import { fetchImages } from '../actions/index';
 import ImageCard from './ImageCard';
+// import Modal from './Modal';
 // eslint-disable-next-line
 class ImageGrid extends Component {
+//     state = { show: false };
+
+//   showModal = () => {
+//     //   console.log
+//     this.setState({ show: true });
+//   };
+
+//   hideModal = () => {
+//     this.setState({ show: false });
+
+// //   };
+//     constructor(props) {
+//         super(props);
     
+//         this.state = { isOpen: false };
+//       }
+      
+//       toggleModal = () => {
+//         this.setState({
+//           isOpen: !this.state.isOpen
+//         });
+//       }
+
+//     handleClick = (e) => {
+//         alert("Image is clicked"+e);
+//     }
 
     createListItems() {
         const emptyMessage = (
@@ -19,16 +45,36 @@ class ImageGrid extends Component {
         
         const images = this.props.images;
         const imageList = (
-            <div className="ui four cards">
+            <div className="ui four cards" >
               { images.map(image => <ImageCard image={image} key={image._id} />) }
             </div>
           );
           console.log("THIS.PROPS.IMAGE ==> ", images)
+        //   console.log("show", this.state.isOpen)
           return (
               
             <div>
               {images.length === 0 ? emptyMessage : imageList}
+              {/* <Modal show={this.state.show} handleClose={this.hideModal}>
+              <div className="ui card">
+                <img src={images.url} alt="category details" />
+                
+                <div></div>
+                </div>
+          
+                
+                </Modal> */}
+              {/* <Modal show={this.state.isOpen}
+                onClose={this.toggleModal}>
+                Here's some content for the modal
+                <div className="ui card">
+                <img src={images.url} alt="category details" />
+                
+                <div></div>
+                </div>
+            </Modal> */}
             </div>
+            
           );
     }
 
