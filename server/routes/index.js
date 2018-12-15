@@ -2,6 +2,7 @@ const imageRoutes = require("./image");
 const userRoutes = require("./user");
 const authRoutes = require("./login");
 const dashboardRoutes = require("./dashboard");
+const middleware = require('../middleware');
 
 const constructorMethod = app => {
     app.use("/auth", authRoutes);
