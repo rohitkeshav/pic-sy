@@ -7,12 +7,13 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+// const path = require('path');
 
 // passport
 const passport = require('passport');
 
 const app = express();
-
+// app.use(express.static(path.join(__dirname,'public')));
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
