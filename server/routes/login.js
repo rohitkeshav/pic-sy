@@ -4,6 +4,11 @@ const bcrypt = require('bcrypt');
 const uuidv4 = require('uuid/v4');
 const uData = require('../data/user.js');
 
+const config = require('../config/config.js');
+const jwt = require('jsonwebtoken');
+const middleware = require('../middleware');
+
+
 async function checkAuth(username, password) {
     let checkVal = false;
     const userObject = await uData.getUserByEmail(username);
@@ -39,26 +44,33 @@ router.post("/sign-in", async (req, res) => {
     const post = req.body;
     let checkVal = false;
 
-    const uName = post.username;
+    const uName = post.email;
     const password = post.password;
 
     try {
         checkVal = await checkAuth(uName, password);
+
         console.log("checkVal ==> ", checkVal)
     }
     catch (e) {
         console.log(e);
         // return res.redirect(200, '/login', { error: e });
     }
+
     if (checkVal) {
-        console.log("uName ", uName)
-        res.cookie('AuthCookie', uName);
-        console.log(req.cookies);
-        console.log('Authenticated')
-        res.redirect('/api/user');
+        let token = jwt.sign({ email: uName }, config.secret, { expiresIn: 129600 });
+        console.log('Authenticated', token);
+        res.send({
+            token: token,
+            user: uName
+        });
     }
     else
         res.send('Incorrect Username or Password');
+});
+
+router.get("/bambi", middleware.checkToken, async (req, res) => {
+    res.send('You are authenticated');
 });
 
 router.post("/sign-up", async (req, res) => {
