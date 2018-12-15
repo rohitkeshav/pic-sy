@@ -70,7 +70,7 @@ router.post("/sign-in", async (req, res) => {
 });
 
 router.get("/bambi", middleware.checkToken, async (req, res) => {
-    res.send('You are authenticated');
+    res.send({'message': 'works'});
 });
 
 router.post("/sign-up", async (req, res) => {

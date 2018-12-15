@@ -9,7 +9,7 @@ const constructorMethod = app => {
     app.use("/api/image", imageRoutes);
     app.use("/api/user", userRoutes);
     app.use("/api/dashboard", dashboardRoutes);
-    app.use("/api/mostviewed/", imageViewsRoutes);
+    app.use("/api/mostviewed", imageViewsRoutes);
     app.use("*", (req, res) => {
         res.status(404).json({ error: "not found" });
     });
