@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
                 }
                 else {
                     client.get(keys[i], function (err, reply) {
-                        retval.push(keys[i], reply);
+                        retval.push(keys[i]);
                     })
                 }
                 // console.log(keys[i]);

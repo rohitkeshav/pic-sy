@@ -84,7 +84,7 @@ export function topViewed(url) {
   return dispatch => {
     fetch(url)
       .then(res => res.json())
-      .then(data =>  dispatch(setViews(data)));
+      // .then(data =>  dispatch(setViews(data)));
   }
 }
 

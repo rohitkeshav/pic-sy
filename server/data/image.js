@@ -31,6 +31,21 @@ let imageControllers = {
         return imageInfo;
     },
 
+    /**
+     * @returns {Object} An object of image
+     */
+    searchImage: async function (query) {
+        const imageCollection = await imageItems();
+        const imageInfo = await imageCollection.find({"$text": {"$search": query}}).toArray();
+        
+        console.log('Hey');
+        
+        if (imageInfo === null) {
+            throw "Server Issue";
+        }
+        return imageInfo;
+    },
+
     // /**
     //  * @returns {Object} An object of image
     //  */

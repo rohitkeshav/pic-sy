@@ -28,6 +28,19 @@ router.get("/", async (req, res) => {
 // });
 
 // get imageData with category
+router.get("/search", async (req, res) => {
+    const searchQuery = req.query['query'];
+    console.log(searchQuery);
+    try {
+        const retrievedObject = await iData.searchImage(searchQuery);
+        res.json(retrievedObject);
+    } catch (e) {
+        console.log(e);
+        res.status(404).json({ message: "Image not found" });
+    }
+});
+
+// get imageData with category
 router.get("/:category", async (req, res) => {
     try {
         const retrievedObject = await iData.getImageByCategory(req.params.category);
@@ -36,6 +49,7 @@ router.get("/:category", async (req, res) => {
         res.status(404).json({ message: "Image not found" });
     }
 });
+
 
 // // get imageData with tag
 // router.get("/:tag", async (req, res) => {
