@@ -1,13 +1,5 @@
 # Imagica
 
-##### TODO - 
-- Authentication
-- MongoDB support - **Done**
-- Express backend - **Done**
-- Python based cron job (concurrent process) for sending out emails
-- Elastic Search possibly replace with socketIO
-- Redis
-
 ##### Getting Started -
 1. ``` git clone https://github.com/rohitkeshav/pic-sy.git ```
 2. ``` cd client ```
